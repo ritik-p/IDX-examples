@@ -1,5 +1,5 @@
 # IDX-examples
-Code examples
+Please read for context. This repository contains code snippets used on Wordpress pages and a full HTML/CSS/JS website.
 
 # blog_examples.html
   This is a code snippet used on a Wordpress blog with the goal of increasing user engagement, ultimately increasing SEO ratings. It is a short quiz based on the blog content. Built using HTML/CSS/JS - 
