@@ -1,160 +1,110 @@
-(function($) {
+function videoslider(links, name, description){
+    document.querySelector(".slider").src = links;
+    document.querySelector("#shoutoutsName").innerHTML = name;
+    document.querySelector("#shoutoutsDescription").innerHTML = description;
+}
 
-	var	$window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$topLogo = $('#topLogo'),
-		$banner = $('#banner');
+//pause all videos functions used during different user interactions
+function pauseAll(){
+    var videos = document.querySelectorAll("video");
+    videos.forEach(video => {
+        video.pause();
+    });
+}
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:	'(max-width: 1680px)',
-			large:	'(max-width: 1280px)',
-			medium:	'(max-width: 980px)',
-			small:	'(max-width: 736px)',
-			xsmall:	'(max-width: 480px)'
-		});
+//pause youtube intro video
+function pauseIntro(){
+    var iframe = document.querySelector("iframe");
+    var iframeSrc = iframe.src;
+    iframe.src = iframeSrc;
+}
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// Header.
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
-
-			$window.on('resize', function() { $window.trigger('scroll'); });
-
-			$banner.scrollex({
-				bottom:		$header.outerHeight(),
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
-			});
-
-		}
-
-		if ($banner.length > 0
-			&&	$topLogo.hasClass('navLogo')) {
-	
-				$window.on('resize', function() { $window.trigger('scroll'); });
-	
-				$banner.scrollex({
-					bottom:		$topLogo.outerHeight(),
-					terminate:	function() { $topLogo.removeClass('navLogo'); },
-					enter:		function() { $topLogo.addClass('navLogo'); },
-					leave:		function() { $topLogo.removeClass('navLogo'); }
-				});
-	
-			}
-	// Menu.
-		var $menu = $('#menu');
-
-		$menu._locked = false;
-
-		$menu._lock = function() {
-
-			if ($menu._locked)
-				return false;
-
-			$menu._locked = true;
-
-			window.setTimeout(function() {
-				$menu._locked = false;
-			}, 350);
-
-			return true;
-
-		};
-
-		$menu._show = function() {
-
-			if ($menu._lock())
-				$body.addClass('is-menu-visible');
-
-		};
-
-		$menu._hide = function() {
-
-			if ($menu._lock())
-				$body.removeClass('is-menu-visible');
-
-		};
-
-		$menu._toggle = function() {
-
-			if ($menu._lock())
-				$body.toggleClass('is-menu-visible');
-
-		};
-
-		$menu
-			.appendTo($body)
-			.on('click', function(event) {
-
-				event.stopPropagation();
-
-				// Hide.
-					$menu._hide();
-
-			})
-			.find('.inner')
-				.on('click', '.close', function(event) {
-
-					event.preventDefault();
-					event.stopPropagation();
-					event.stopImmediatePropagation();
-
-					// Hide.
-						$menu._hide();
-
-				})
-				.on('click', function(event) {
-					event.stopPropagation();
-				})
-				.on('click', 'a', function(event) {
-
-					var href = $(this).attr('href');
-
-					event.preventDefault();
-					event.stopPropagation();
-
-					// Hide.
-						$menu._hide();
-
-					// Redirect.
-						window.setTimeout(function() {
-							window.location.href = href;
-						}, 350);
-
-				});
-
-		$body
-			.on('click', 'a[href="#menu"]', function(event) {
-
-				event.stopPropagation();
-				event.preventDefault();
-
-				// Toggle.
-					$menu._toggle();
-
-			})
-			.on('keydown', function(event) {
-
-				// Hide on escape.
-					if (event.keyCode == 27)
-						$menu._hide();
-
-			});
-
-		$(document).ready(function() {
-			MicroModal.init({
-				disableScroll: true
-			});
-			});
+function checkEscPause(){
+    document.addEventListener('keydown', function(event) {
+        if(event.key === "Escape"){
+            pauseAll();
+            pauseIntro();
+        }
+    });
+}
 
 
-})(jQuery);
+const aboutDiv = document.getElementById('about');
+const mediaQuery = window.matchMedia('(max-width: 1280px)');
+
+function changeCss () { 
+    var bg1 = document.querySelector("body"); 
+    var bg3 = document.querySelector("#contact"); 
+    const divTop = aboutDiv.getBoundingClientRect().top;
+    this.scrollY > 1000 ? bg1.style.backgroundImage = "linear-gradient(to top, rgba(46, 49, 65, 0.312), rgba(46, 49, 65, 0)), url('../../images/bgBeach.png')" : bg1.style = "initial";
+        if(window.matchMedia('(max-width: 1280px)').matches){
+        this.scrollY > 1000 ? bg3.style.backgroundImage = "linear-gradient(to top, rgba(46, 49, 65, 0.312), rgba(46, 49, 65, 0)), url('../../images/bgBeach.png')" : bg3.style.backgroundImage = "linear-gradient(to top, rgba(46, 49, 65, 0.312), rgba(46, 49, 65, 0)), url('../../images/bgBeach.png')"; 
+        } 
+    }
+    
+window.addEventListener("scroll", changeCss , false); 
+
+
+document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '.splide', {
+          perPage    : 4,
+          breakpoints: {
+              600: {
+                  perPage: 3,
+              },
+          },
+    } ).mount();
+  } );
+
+
+//add mailing list submissions to google sheet
+(function ($) {
+
+if ($("#subscribeForm").length) {
+    $("#subscribeForm").validate({
+        rules: {
+            First_Name: {
+                required: true,
+                minlength: 2
+            },
+            Last_Name: {
+                required: true,
+                minlength: 1
+            },
+
+            Email: "required",
+        },
+
+        messages: {
+            First_Name: "Please enter your first name",
+            Last_Name: "Please enter your last name",
+            Email: "Please enter your email address",
+        },
+
+        submitHandler: function (form) {
+            $.ajax({
+                type: "POST",
+                url: "https://script.google.com/macros/s/REMOVED_FOR_PRIVACY",
+                data: $(form).serialize(),
+                success: function () {
+                    $("#loader").hide();
+                    $("#success").slideDown("slow");
+                    setTimeout(function () {
+                        $("#success").slideUp("slow");
+                    }, 3000);
+                    form.reset();
+                },
+                error: function () {
+                    $("#loader").hide();
+                    $("#error").slideDown("slow");
+                    setTimeout(function () {
+                        $("#error").slideUp("slow");
+                    }, 3000);
+                }
+            });
+            return false; // required to block normal submit since using ajax
+        }
+
+    });
+}
+})(window.jQuery);
