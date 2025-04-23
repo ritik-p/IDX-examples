@@ -1,0 +1,582 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description"
+        content="Listen to the YoggNation Podcast for inspiring stories on gratitude, self-awareness, and overcoming bullying. Uplifting conversations with high-profile guests.">
+    <meta name="keywords"
+        content="YoggNation, Podcast, Gratitude, Anti-Bullying, Self-Awareness, Growth, Inspiring Stories, High-Profile Guests">
+    <meta property="og:title" content="YoggNation: Spirit of Gratitude Podcast">
+    <meta property="og:description"
+        content="Listen to the YoggNation Podcast for inspiring stories on gratitude, self-awareness, and overcoming bullying. Uplifting conversations with high-profile guests.">
+    <meta property="og:image" content="https://yoggnation.com/images/logo.png">
+    <meta property="og:url" content="https://yoggnation.com">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "PodcastSeries",
+	  "name": "YoggNation: Spirit of Gratitude Podcast",
+	  "description": "Listen to the YoggNation Podcast for inspiring stories on gratitude, self-awareness, and overcoming bullying. Uplifting conversations with high-profile guests.",
+	  "url": "https://yoggnation.com",
+	  "image": "https://yoggnation.com/images/logo.png",
+	  "publisher": {
+		"@type": "Organization",
+		"name": "YoggNation",
+		"logo": {
+		  "@type": "ImageObject",
+		  "url": "https://yoggnation.com/images/logo.png"
+		}
+	  }
+	}
+	</script>
+
+    <link rel="shortcut icon" type="image/png" href="./images/logo.png">
+    <title>YoggNation: Spirit of Gratitude Podcast</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <!-- Google tag (gtag.js) -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REMOVED"></script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-REMOVED');
+
+    </script>
+</head>
+
+<body class="is-preload loaderLoad" id="bodySection">
+
+
+    <div class="loader-wrapper">
+        <div class="wave-fill">
+            <div class="water">
+                <span class="wave loaderSpan"></span>
+                <span class="deep-water loaderSpan"></span>
+            </div>
+        </div>
+    </div>
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt" style="z-index: 500;">
+            <a id="navHomeAnchor" href="#banner"><img id="topLogo" class="navLogo" src="images/logo.png" alt="" /></a>
+            <nav>
+                <div id="menuLarge">
+                    <a href="#episodes">Episodes</a>
+                    <a href="#guests">Recent Guests</a>
+                    <a href="#about">About</a>
+                    <a href="#" data-micromodal-trigger="resourcesModal">Resources</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#" class="button primary small" data-micromodal-trigger="subscribeModal"
+                        style="font-size: 80%; border-radius: 54px !important;">Subscribe</a>
+                </div>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#episodes">Episodes</a></li>
+                    <li><a href="#guests">Recent Guests</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#" data-micromodal-trigger="resourcesModal">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="button primary small" data-micromodal-trigger="subscribeModal"
+                            style="font-size: 80%;">Subscribe</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+
+        <section id="banner">
+            <div id="heroImg">
+                <div id="heroContainer">
+                    <div id="heroLogoSection" class="inner">
+
+                        <img class="headLogo" src="images/logo.png" alt="" />
+                        <p id="spiritQuote"
+                            style="line-height:0.9;position: relative; white-space: nowrap !important; margin-top: 5px; bottom: .2em; font-weight: 600; text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0.25em 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0); margin-bottom: -20px;">
+                            <span class="large-quote" style="font-weight: 300;">&#34;</span>The Spirit of Gratitude<span
+                                class="large-quote" style="font-weight: 300;">&#34;</span>
+                        </p>
+                        <p
+                            style="position: relative; font-weight: 600; text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0.25em 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0); margin-top: 10px;">
+                            Podcast...</p>
+                        <button id="listenModalButton" data-micromodal-trigger="listenModal"
+                            class="heroListenCTA">Listen Now</button>
+                        <br />
+                        <button id="listenModalButton" data-micromodal-trigger="introModal" class="heroIntroCTA"
+                            onclick="checkEscPause()">Intro Video</button>
+                    </div>
+                    <div id="shoutoutsCTA">
+                        <h1 style="text-transform: none; line-height:1.15;">See what people are saying about YoggNation.
+                        </h1>
+                        <button id="shoutoutsModalButton" data-micromodal-trigger="shoutoutsModal" class="button socta"
+                            onclick="checkEscPause()">Shoutouts</button>
+                    </div>
+                </div>
+
+                <!--Shoutouts Modal-->
+                <div id="shoutoutsModal" class="modal micromodal-slide" aria-hidden="true">
+                    <div class="modal__overlay" tabindex="-1" data-micromodal-close onclick="pauseAll()">
+                        <div class="modal__container" role="dialog" aria-modal="true"
+                            aria-labelledby="shoutoutsModalTitle">
+                            <header class="modal__header">
+                                <h2 class="modal__title" id="shoutoutsModalTitle">
+                                    Shoutouts
+                                </h2>
+                                <button class="modal__close" aria-label="Close modal" data-micromodal-close
+                                    onclick="pauseAll()"></button>
+                            </header>
+                            <div class="modal__content" id="shoutoutsModalContent">
+                                <div>
+                                    <h3 style="color: black;" id="shoutoutsName">Jonathan Karl</h3>
+                                    <br />
+                                    <div id="shoutoutsDescription"
+                                        style="color: black; overflow-y: auto; max-height: 100vh;">Chief Washington
+                                        Correspondent - ABC News</div>
+                                </div>
+                                <div class="container" style="margin-bottom: -100px !important;">
+                                    <video id="shoutoutsMainVid" src="./images/person1.mov" class="slider" loop
+                                        controls></video>
+                                </div>
+                            </div>
+                            <div class="splide" id="shoutoutsSlider" data-splide='{"type":"slide", "gap":"0px"}'>
+                                <div class="splide__track">
+                                    <ol class="splide__list">
+                                        <li class="splide__slide"
+                                            onclick="videoslider('./images/person1.mov', 'Jonathan Karl', 'Chief Washington Correspondent - ABC News')">
+                                            <video src="./images/person1.mov"></video>
+                                        </li>
+
+                                        <li class="splide__slide"
+                                            onclick="videoslider('./images/Denene.mov','Denene Millner', 'New York Times Best Selling Author')">
+                                            <video src="./images/Denene.mov"></video>
+                                        </li>
+                                        <li class="splide__slide"
+                                            onclick="videoslider('./images/person2.mov','Brad Gilbert', 'Former Tennis Pro, Current Coach of Coco Gauff')">
+                                            <video src="./images/person2.mov"></video>
+                                        </li>
+                                        <li class="splide__slide"
+                                            onclick="videoslider('./images/person4.mp4','Nick Lowery', 'Hall of Fame Kansas City Chiefs')">
+                                            <video src="./images/person4.mp4"></video>
+                                        </li>
+                                        <li class="splide__slide"
+                                            onclick="videoslider('./images/person5.mp4','Jeff McKinney', 'Founder and CEO of One2Gration')">
+                                            <video src="./images/person5.mp4"></video>
+                                        </li>
+                                        <li class="splide__slide"
+                                            onclick="videoslider('./images/person3.mov', 'Ryan Seggerman', 'ATP Player')">
+                                            <video src="./images/person3.mov"></video>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Intro Video Modal-->
+            <div id="introModal" class="modal micromodal-slide" aria-hidden="true" style="z-index: 999;">
+                <div class="modal__overlay" tabindex="-1" data-micromodal-close onclick="pauseIntro()"
+                    style="z-index: 501;">
+                    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="shoutoutsModalTitle"
+                        style="width: 75vw;">
+                        <header class="modal__header">
+                            <h2 class="modal__title" id="shoutoutsModalTitle">
+                                A message from the creator & host
+                            </h2>
+                            <button class="modal__close" aria-label="Close modal" data-micromodal-close
+                                onclick="pauseAll()"></button>
+                        </header>
+                        <div class="modal__content" id="shoutoutsModalContent">
+                            <div class="container">
+                                <iframe id="shoutoutsMainVid" class="introFrame"
+                                    src="https://www.youtube.com/embed/fqSXv6p2IMU?si=WPtHSC9xr3EovGvh"
+                                    title="YouTube video player YoggNation Introduction" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--subscribe modal-->
+        <div id="subscribeModal" class="modal micromodal-slide" aria-hidden="true" style="z-index: 999;">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="shoutoutsModalTitle">
+                    <header class="modal__header">
+                        <h2 class="modal__title" id="shoutoutsModalTitle">
+                            Mailing List
+                        </h2>
+                        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                    </header>
+                    <div class="modal__content" id="subscribeContent">
+                        <div>
+                            <img src="images/mail.svg" alt="mailingList" id="mailSVG"
+                                style="width: 30%; display: block; margin: auto;" />
+                            <!--start email list form-->
+                            <p style="text-align: center; margin: 15px 0 5px 0; font-weight: bold;">Subscribe to our
+                                mailing list to get the latest updates on new episodes and guests!</p>
+                            <div class="formContainer" style="align-content: center;">
+                                <form id="subscribeForm" class="contact-validation-active">
+                                    <input name="Email" type="email" placeholder="Email..." required
+                                        class="subscribeInput"
+                                        style="margin-bottom: 5px; background-color: rgba(143, 143, 143, 0.3);">
+                                    <input name="First_Name" type="text" placeholder=" First Name..." required
+                                        class="subscribeInput"
+                                        style="margin-bottom: 5px; background-color: rgba(143, 143, 143, 0.3);">
+                                    <input name="Last_Name" type="text" placeholder="Last Name..." required
+                                        class="subscribeInput" style="background-color: rgba(143, 143, 143, 0.3);">
+                                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                                        <button type="submit" class="button primary small" id="submitSubscribeForm"
+                                            style="margin-top: 10px;">Subscribe</button>
+                                    </div>
+                                    <div class="clearfix error-handling-messages">
+                                        <div id="success">Thank you</div>
+                                        <div id="error"> Error occurred. Please try again later.
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="mailingListYoutube">
+                                <a href="#" target="_blank" class="listenSocialIcon"
+                                    style="text-align: center; display: block;">
+                                    <img src="./images/yt_logo_rgb_light.png" alt="YouTube link"
+                                        style="height: 5vh; width: auto;">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Listen Now modal-->
+        <div id="listenModal" class="modal micromodal-slide" aria-hidden="true" style="z-index: 999;">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="shoutoutsModalTitle">
+                    <header class="modal__header">
+                        <h2 class="modal__title" id="shoutoutsModalTitle">
+                            Find us!
+                        </h2>
+                        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                    </header>
+                    <div class="modal__content" id="listenContent">
+                        <div>
+                            <img src="images/listen.svg" alt="listenNow" id="listenSVG"
+                                style="width: 40%; display: block; margin: auto;" />
+                            <p style="text-align: center; margin: 15px 0 5px 0; font-weight: bold;">Find the YoggNation:
+                                &#34;The Spirit of Gratitude&#34; Podcast on these Platforms!</p>
+                            <ul class="icons" style="text-align: center;">
+                                <li><a href="https://open.spotify.com/show/3bqGB1v6J3Vl7DeficxNzp?si=6b3825271d864e40"
+                                        target="_blank" class="icon brands fa-spotify listenSocialIcon"><span
+                                            class="tooltiptext">Spotify</span></a></li>
+                                <li><a href="https://podcasts.apple.com/us/podcast/yoggnation/id1761930691"
+                                        target="_blank" class="icon brands listenSocialIcon"><img
+                                            src="./images/apple-podcast.svg"
+                                            style="width: 1.9em;margin:0 0 -.5em 0 ;"><span class="tooltiptext">Apple
+                                            Podcasts</span></a></li>
+                                <li><a href="https://www.instagram.com/yoggnation/?hl=en" target="_blank"
+                                        class="icon brands fa-instagram listenSocialIcon"><span
+                                            class="tooltiptext">Instagram</span></a></li>
+                                <li><a href="https://www.facebook.com/yoggnation" target="_blank"
+                                        class="icon brands fa-facebook-f listenSocialIcon"><span
+                                            class="tooltiptext">Facebook</span></a></li>
+                                <br />
+                                <li><a href="https://youtube.com/@yoggnation?si=NxLBnOcRjc4uoFdI" target="_blank"
+                                        class="icon brands fa-youtube listenSocialIcon"><span
+                                            class="tooltiptext">YouTube</span></a></li>
+                                <li><a href="https://www.linkedin.com/in/yogeshpatel3/" target="_blank"
+                                        class="icon brands fa-linkedin listenSocialIcon"><span
+                                            class="tooltiptext">LinkedIn</span></a></li>
+
+
+                                <a href="Https://community.one2gration.com/" target="_blank"
+                                    class="icon brands listenSocialIcon"><img src="images/respocial-logo.png"
+                                        style="width: 1.75em;"></a>
+                            </ul>
+                            <p style="text-align: center;">More Platforms Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Resources modal-->
+        <div id="resourcesModal" class="modal micromodal-slide" aria-hidden="true" style="z-index: 999;">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="shoutoutsModalTitle">
+                    <header class="modal__header">
+                        <h2 class="modal__title" id="shoutoutsModalTitle">
+                            Anti-Bullying Resources
+                        </h2>
+                        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                    </header>
+                    <div class="modal__content" id="listenContent">
+                        <div>
+                            <ul class="resources" style="text-align: center;">
+                                <h3 class="resourcesCategory">Hotlines</h3>
+                                <li><a href="https://988lifeline.org/" target="_blank" class="resource">988 Lifeline -
+                                        24/7, free and confidential support</a></li>
+                                <h3 class="resourcesCategory">Bullying Prevention</h3>
+                                <li><a href="https://www.stopbullying.gov/" target="_blank" class="resource">Stop
+                                        Bullying Website</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guests -->
+        <section id="guests">
+
+            <section id="one" class="wrapper style7">
+                <div class="inner">
+                    <div class="grid-style">
+                        <h2 id="recentGuestsText">Recent Guests</h2>
+                        <div class="box alt">
+                            <div class="row gtr-uniform">
+
+                                <div class="col-6"><span class="image fit"><img
+                                            src="images/TemplateWebsiteOscarGonzalez.jpg" alt="Oscar Gonzalez"
+                                            class="guestPhoto" /></span>
+                                    <h3 class="recentGuestName">Oscar Gonzalez</h3>
+                                </div>
+
+                                <div class="col-6"><span class="image fit"><img src="images/TemplateWebsiteJustinW.jpg"
+                                            alt="Justin Wright" class="guestPhoto" /></span>
+                                    <h3 class="recentGuestName">Justin Wright</h3>
+                                </div>
+
+
+                                <div class="col-6"><span class="image fit"><img src="images/TemplateWebsiteKeithFG.jpg"
+                                            alt="Keith Fitz-Gerald" class="guestPhoto" /></span>
+                                    <h3 class="recentGuestName">Keith Fitz-Gerald</h3>
+                                </div>
+
+
+                                <div class="col-6"><span class="image fit"><img src="images/TemplateWebsiteFayruz.jpg"
+                                            alt="Fayruz Benyousef" class="guestPhoto" /></span>
+                                    <h3 class="recentGuestName">Fayruz Benyousef</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+
+
+            <!-- Episodes -->
+            <section id="episodes" class="wrapper alt style1">
+                <div class="inner">
+                    <h2 class="major">Episodes</h2>
+                    <p>Explore Our Latest Episodes: Discover inspiring stories and insightful conversations with our
+                        featured guests. Listen now and dive into our most recent discussions on gratitude,
+                        self-awareness, and personal growth. Stay tuned for more episiodes coming soon!</p>
+                    <section class="features">
+
+                        <article>
+                            <a href="https://youtu.be/7BZLvkLamKA" class="image" target="_blank"><img
+                                    src="images/oscarThumbnail.jpg" alt="Oscar Gonzalez" target="_blank" /></a>
+                            <h3 class="major">Oscar Gonzalez</h3>
+                            <p class="releaseDate">April 8, 2025</p>
+                            <br />
+                            <p>
+                                Former US Military veteran Oscar Gonzalez, National Hotline Director at Boys Town
+                                uncovers how the organization helps saving lives and creating successful futures for
+                                youth in crisis.</p>
+                            <a href="https://youtu.be/7BZLvkLamKA" class="special" target="_blank">Listen Now</a>
+                        </article>
+
+
+                        <article>
+                            <a href="https://youtu.be/P7lPRhpCfH0" class="image" target="_blank"><img
+                                    src="images/JustinWrightYouTubeThumbnail.jpg" alt="Justin Wright"
+                                    target="_blank" /></a>
+                            <h3 class="major">Justin Wright</h3>
+                            <p class="releaseDate">April 1, 2025</p>
+                            <br />
+                            <p>Justin, a viral influencer and executive coach shares how self-awareness, emotional
+                                intelligence, and gratitude helped him build a thriving career scaling his online
+                                newsletter "Brilliance Brief" to a staggering 525,000 followers in 20 months.
+                            </p>
+                            <a href="https://youtu.be/P7lPRhpCfH0" class="special" target="_blank">Listen Now</a>
+                        </article>
+
+                        <article>
+                            <a href="https://youtu.be/9tnD-J7_9Xw" class="image" target="_blank"><img
+                                    src="images/KeithFGThumbnailWebsite.jpg" alt="Keith Fitz-Gerald" /></a>
+                            <h3 class="major">Keith Fitz-Gerald</h3>
+                            <p class="releaseDate">March 25, 2025</p>
+                            <br />
+                            <p>The award winning author and filmmaker shares his firsthand account of dodging sniper
+                                fire while delivering aid in Sarajevo and his unlikely collaboration and eventual
+                                friendship with the rock band U2.
+                            </p>
+                            <a href="https://youtu.be/9tnD-J7_9Xw" class="special" target="_blank">Listen Now</a>
+                        </article>
+
+                        <article>
+                            <a href="https://youtu.be/JY4P2k3lGPc" class="image" target="_blank"><img
+                                    src="images/FayruzYoutubeThumbnail.jpg" alt="Fayruz Benyousef"
+                                    target="_blank" /></a>
+                            <h3 class="major">Fayruz Benyousef</h3>
+                            <p class="releaseDate">March 18, 2025</p>
+                            <br />
+                            <p>Fayruz shares how she turned adversity into impact—and how you can, too. This is more
+                                than a story of survival; it’s a testament to the unbreakable human spirit.</p>
+                            <a href="https://youtu.be/JY4P2k3lGPc" class="special" target="_blank">Listen Now</a>
+                        </article>
+
+                    </section>
+                    <ul class="actions">
+
+                        <li><a href="https://www.youtube.com/@YoggNation/videos" class="button" target="_blank">Browse
+                                All</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </section>
+
+        <!--About section-->
+        <div id="about" class="wrapper style8">
+            <div class="inner">
+                <section>
+                    <h2>About</h4>
+                        <p>
+                            <span class="image right">
+                                <img src="images/Yogi_about.jpg" alt="">
+                            </span>
+                            I have found my Purpose - to help and serve others to overcome their bullying struggles.
+                            <br />
+                            <br />
+                            The mission for the podcast is for listeners, especially young adults and adolescents, to
+                            reflect and draw inspiration from high profile guests, sharing their experiences and wisdom
+                            on the topics of bullying, self-awareness and their inner spirit.
+                            <br /><br />
+                            Especially with bullying, it is a very private and personal matter.
+                            <br />
+                            <br />
+                            Through the stories (and vulnerabilities) guests will share, you will come away with a
+                            unique understanding how their earlier adversity dealing with bullying helped:
+                        <ul style="margin-bottom: 1em;">
+                            <li>Strengthen their Resolve</li>
+                            <li>Shaped and Developed their Character</li>
+                            <li>Taught Perseverance</li>
+                        </ul>
+                        </p>
+
+                        <p>
+                            …Ultimately leading them to become the successful person they are today.
+                            <br />
+                            <br />
+                            Drawing inspiration from my daughter Riyani who was bullied in middle school because of her
+                            Tourette’s, she was severely teased and made fun of because of her uncontrollable motor and
+                            vocal tics.
+                            <br />
+                            <br />
+                            As a maturing young adult, she's been a successful teen author, worked at a Ritz Carlton
+                            property for a year and is now attending Northern Arizona University.
+                            <br />
+                            <br />
+                            The adversity she experienced growing up has led her to be person she is today.
+                            <br />
+                            <br />
+                            It is my sincere hope that the listeners, including adults come away with nuggets of wisdom
+                            that they can internalize, taking a brief pause reflecting on the messaging from our guests,
+                            serving as good reminders of our inner spirit we all have.
+                            <br />
+                            <br />
+                            Thank you for your interest in this podcast and God Bless.
+                        </p>
+                </section>
+            </div>
+        </div>
+
+        <!--Contact section-->
+        <section id="contact">
+            <div class="inner">
+                <h2 class="major">Get in touch</h2>
+                <p>Appreciate your time and interest to scroll down this far on the website. :-)
+                    <br />
+                    Would love to hear from you. Please feel free to reach out through one of the platforms below.
+                    <br />
+                    I will do my best to respond in a timely manner.
+
+                </p>
+
+                <ul class="contact" style="margin-top: 20px;">
+                    <li class="icon solid fa-envelope">Yogi@YoggNation.com</li>
+                    <li class="icon brands fa-instagram"><a href="https://www.instagram.com/yoggnation/?hl=en"
+                            target="_blank">Instagram</a></li>
+                    <li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/yoggnation"
+                            target="_blank">Facebook</a></li>
+                    <li class="icon brands fa-brands fa-linkedin-in"><a href="https://www.linkedin.com/in/yogeshpatel3/"
+                            target="_blank">LinkedIn</a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Copyright 2025 YoggNation Podcast. All rights reserved. | By <a
+                            href="https://www.linkedin.com/in/ritikpatel-/" target="_blank">Ritik</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/micromodal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="assets/js/vanilla.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        $(window).on("load", function () {//initial loader delay and removal
+            setTimeout(function () {
+                $(".loader-wrapper").fadeOut("slow");
+                $("body").removeClass("loaderLoad");
+            }, 2000); // 2000 milliseconds = 2 seconds
+        });
+    </script>
+</body>
+
+</html>
