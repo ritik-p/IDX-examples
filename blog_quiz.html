@@ -1,0 +1,272 @@
+<div class="quiz-container">
+  <div class="quiz-game">
+    <div class="quiz-content">
+      <h2 class="quiz-question montserrat-question">Question:</h2>
+      <div class="quiz-answer-container montserrat-answers"></div>
+    </div>
+    <button class="quiz-submit montserrat-question">SUBMIT</button>
+  </div>
+  <div class="quiz-result hidden">
+    <h1>Your Results</h1>
+    <div class="quiz-row">
+      <h3 class="quiz-correct"></h3>
+      <h3 class="quiz-wrong"></h3>
+    </div>
+    <ol class="quiz-explanation"></ol>
+    <h2 class="quiz-score"></h2>
+    <button class="quiz-restart montserrat-question">RESTART QUIZ</button>
+  </div>
+</div>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.montserrat-question {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+
+.montserrat-answers {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+button{
+     border: none;
+  background-color: #1ba9fa;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+  .quiz-container {
+margin: auto;
+    background-color: #f4f4f4;
+  max-width: 85vw;
+  min-height: 400px;
+   position: relative;
+  }
+
+  .quiz-game {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quiz-content {
+    padding: 2.5rem;
+  }
+
+  .quiz-question {
+    font-size: 1.4rem !important;
+    font-family:'Montserrat';
+  }
+
+  .quiz-answer {
+    font-size: 1.1rem !important;
+    color: #7d7d7d;
+    margin-bottom: 0.75rem;
+  }
+
+  input[type="radio"] {
+    filter: hue-rotate(-20deg);
+  }
+
+  .quiz-submit {
+
+  min-width: 30%;
+  max-width: 600px;
+  margin:auto;
+  height: 50px;
+  font-size: 1.25rem;
+  }
+
+  .quiz-result {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .quiz-result h1 {
+    font-size: 1.8rem;
+  }
+
+  .quiz-row {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+  }
+
+  .quiz-correct {
+    color: #24936e !important;
+  }
+
+  .quiz-wrong {
+    color: #9f353a !important;
+  }
+
+  .quiz-explanation {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .quiz-explanation li:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-restart {
+    padding: 10px 20px;
+    font-size: 1.25rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  const data = [
+    {
+      id: 1,
+      question: "Approximately how often should a dryer vent be cleaned?",
+      answers: [
+        { answer: "Every 3-4 years.", isCorrect: false },
+        { answer: "Every 6-12 months.", isCorrect: true },
+        { answer: "Every other week.", isCorrect: false },
+        { answer: "Only when the dryer breaks down.", isCorrect: false }
+      ],
+      explanation:
+        "Regular cleanings 1-2 times a year prevents lint buildup and fire risk."
+    },
+    {
+      id: 2,
+      question: "Clogged dryer vents reduce efficiency. What other home system, when clogged with dust and debris, can significantly reduce its efficiency and increase energy costs, similar to a dryer vent?",
+      answers: [
+        { answer: "The kitchen sink drain.", isCorrect: false },
+        { answer: "The garage door opener.", isCorrect: false },
+        { answer: "The home's air duct system.", isCorrect: true },
+        { answer: "The bathroom towel rack.", isCorrect: false }
+      ],
+      explanation:
+        "Like dryer vents, dirty air ducts restrict airflow, causing systems to work harder."
+    },
+    {
+      id: 3,
+      question: "How many fires occur annually due to dryers, according to the NFPA?",
+      answers: [
+        { answer: "Up to 500 fires.", isCorrect: false },
+        { answer: "Up to 2,500 fires.", isCorrect: false },
+        { answer: "Over 13,000 fires.", isCorrect: true },
+        { answer: "1000 fires.", isCorrect: false }
+      ],
+      explanation:
+        "'In 2014-2018, local fire departments responded to an estimated average of 13,820 home structure fires per year in which dryers were involved in the ignition.'"
+    }
+  ];
+
+  const quizGameScreen = document.querySelector(".quiz-game");
+  const quizResultScreen = document.querySelector(".quiz-result");
+  const quizQuestion = document.querySelector(".quiz-question");
+  const quizAnswerContainer = document.querySelector(".quiz-answer-container");
+  const quizSubmitButton = document.querySelector(".quiz-submit");
+  const quizRestartButton = document.querySelector(".quiz-restart");
+
+  let qIndex = 0,
+    correctCount = 0,
+    wrongCount = 0,
+    total = 0,
+    selectedAnswer;
+
+  const hiddenSwitch = () => {
+    quizGameScreen.classList.toggle("hidden");
+    quizResultScreen.classList.toggle("hidden");
+
+    total = (correctCount / 3) * 100;
+    total = total.toFixed(2); // rounding to 2 decimal places
+
+    quizResultScreen.querySelector(".quiz-correct").textContent = `Correct: ${correctCount}`;
+    quizResultScreen.querySelector(".quiz-wrong").textContent = `Wrong: ${wrongCount}`;
+    quizResultScreen.querySelector(".quiz-score").textContent = `Your score: ${total}%`;
+  };
+
+  const showExplanation = () => {
+    const correctAnswers = data.map(
+      (item) => item.answers.find((answer) => answer.isCorrect).answer
+    );
+    let explanationStr = "";
+    for (let i = 0; i < correctAnswers.length; i++) {
+      explanationStr += `<li>Answer:&nbsp;<span class="bold">${correctAnswers[i]}</span>&nbsp;${data[i].explanation}</li>`;
+    }
+    quizResultScreen.querySelector(".quiz-explanation").innerHTML = explanationStr;
+  };
+
+  const showResult = () => {
+    hiddenSwitch();
+    showExplanation();
+  };
+
+  const showQuestion = (qNumber) => {
+    if (qIndex === data.length) return showResult();
+    selectedAnswer = null;
+    quizQuestion.textContent = data[qNumber].question;
+    quizAnswerContainer.innerHTML = data[qNumber].answers
+      .map(
+        (item, index) => `        
+          <div class="quiz-answer">
+            <input type="radio" name="answer" id="answer-${index}" value="${item.isCorrect}">
+            <label for="answer-${index}">${item.answer}</label>
+          </div>`
+      )
+      .join("");
+
+    selectAnswer();
+  };
+
+  const selectAnswer = () => {
+    quizAnswerContainer.querySelectorAll("input").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        selectedAnswer = e.target.value;
+      });
+    });
+  };
+
+  const resetResult = () => {
+    qIndex = 0;
+    correctCount = 0;
+    wrongCount = 0;
+    showQuestion(qIndex);
+  };
+
+  quizSubmitButton.addEventListener("click", () => {
+    if (selectedAnswer !== null) {
+      selectedAnswer === "true" ? correctCount++ : wrongCount++;
+      qIndex++;
+      showQuestion(qIndex);
+    } else alert("Select an answer");
+  });
+
+  quizRestartButton.addEventListener("click", () => {
+    hiddenSwitch();
+    resetResult();
+  });
+
+  document.addEventListener("DOMContentLoaded", resetResult);
+</script>
