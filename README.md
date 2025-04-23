@@ -12,3 +12,9 @@ Live example WITH UTM: https://coconutcleaningco.com/creators/?utm_content=IDX&u
 
 # podcast folder files
   This folder contains HTML, CSS, and JS files which were used in the creation of a podcast's website. This is not the full codebase and many dependencies are missing as these 3 files are just for demo purposes. Live example: https://yoggnation.com/ 
+
+
+Other Websites I've worked on or built:
+https://greenmangopest.com/ (WP)
+https://gvinn.com/ (HTML/CSS/JS)
+https://team-24.org/brands/ (WP)
